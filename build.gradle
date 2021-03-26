@@ -29,5 +29,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
 	compile 'org.projectlombok:lombok:1.18.18'
 	testImplementation 'org.assertj:assertj-core:3.19.0'
+
     testCompile 'junit:junit:4.12'
+    runtime 'com.h2database:h2'
 }
