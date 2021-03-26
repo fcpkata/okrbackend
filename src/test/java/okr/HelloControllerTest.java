@@ -1,8 +1,10 @@
-package hello;
+package okr;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import okr.HelloController;
 
 public class HelloControllerTest {
 
