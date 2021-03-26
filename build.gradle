@@ -27,5 +27,7 @@ targetCompatibility = 11
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
     testCompile 'junit:junit:4.12'
+    runtime 'com.h2database:h2'
 }
