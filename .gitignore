@@ -1,0 +1,13 @@
+*.swp
+*~
+
+.classpath
+.project
+.gradle
+.settings
+.idea
+
+build
+bin
+
+*.class
