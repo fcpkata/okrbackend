@@ -35,10 +35,11 @@ public class MockDataService implements DataService {
 		
 		Optional<OkrInformation> existingOkrInformation = fetchOkrById(okrInformation.getId());
 		
-		int indexOf = okrInformations.indexOf(existingOkrInformation.get());
+		existingOkrInformation.map(okr -> okrInformations.indexOf(okr))
+								
+							  .ifPresent(indx -> okrInformations.remove(indx.intValue()));
 		
-		okrInformations.remove(indexOf);
-				
+						
 		okrInformations.add(okrInformation);
 		
 	}
