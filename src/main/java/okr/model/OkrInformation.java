@@ -7,8 +7,8 @@ import lombok.Data;
 @Builder
 public class OkrInformation {
 	
-	private String id;
-	private String parentId;
+	private Integer id;
+	private Integer parentId;
 	private String description;
 	private Double progress;
 	

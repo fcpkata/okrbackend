@@ -9,7 +9,7 @@ public interface DataService {
 	
 	List<OkrInformation> fetchAllOkrs();
 	
-	Optional<OkrInformation> fetchOkrById(String id);
+	Optional<OkrInformation> fetchOkrById(Integer id);
 
 	void saveOkrFor(OkrInformation okrInformation);
 

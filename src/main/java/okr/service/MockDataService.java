@@ -12,8 +12,8 @@ public class MockDataService implements DataService {
 	
 	static {
 		okrInformations.add(OkrInformation.builder()
-										  .id("10")
-										  .parentId("0")
+										  .id(10)
+										  .parentId(0)
 										  .description("Objective Description")
 										  .build());
 	}
@@ -24,9 +24,9 @@ public class MockDataService implements DataService {
 	}
 
 	@Override
-	public Optional<OkrInformation> fetchOkrById(String id) {
+	public Optional<OkrInformation> fetchOkrById(Integer id) {
 		return okrInformations.stream()
-							  .filter(okr -> id.equalsIgnoreCase(okr.getId()))
+							  .filter(okr -> id == okr.getId())
 							  .findFirst();
 	}
 

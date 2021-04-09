@@ -28,19 +28,19 @@ public class OkrDataServiceTest {
 	
 	@Test
 	public void fetchesOkrForTheId10() throws Exception {
-		Optional<OkrInformation> okrOptional = dataService.fetchOkrById("10");
+		Optional<OkrInformation> okrOptional = dataService.fetchOkrById(10);
 		assertThat(okrOptional.get().getDescription()).isEqualTo("Objective Description");
 	}
 
 	@Test
 	public void savesOkrDataForTheId10() throws Exception {
-		dataService.saveOkrFor(OkrInformation.builder().id("10")
-													    .parentId("0")
+		dataService.saveOkrFor(OkrInformation.builder().id(10)
+													    .parentId(0)
 													    .description("Objective Description")
 													    .progress(20.0)
 													    .build());
 		
-		Optional<OkrInformation> okrOptional = dataService.fetchOkrById("10");
+		Optional<OkrInformation> okrOptional = dataService.fetchOkrById(10);
 		assertThat(okrOptional.get().getProgress()).isEqualTo(20.0);
 		
 	}
