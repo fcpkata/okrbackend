@@ -30,6 +30,7 @@ dependencies {
 	compile 'org.projectlombok:lombok:1.18.18'
 	annotationProcessor 'org.projectlombok:lombok:1.18.8'
 	testImplementation 'org.assertj:assertj-core:3.19.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.4'
 
     testCompile 'junit:junit:4.12'
     runtime 'com.h2database:h2'
