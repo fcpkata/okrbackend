@@ -1,16 +1,14 @@
 package okr;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
-
-import okr.OkrController;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class OkrControllerTest {
 
 	@Test
 	public void controllerReturnsHelloText() {
 		OkrController controller = new OkrController();
-		assertEquals("Hello, world", controller.index());
+		assertThat(controller.index()).isEqualTo("Hello, world");
 	}
 }
