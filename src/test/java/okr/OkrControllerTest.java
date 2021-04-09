@@ -1,14 +1,16 @@
-package hello;
+package okr;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class HelloControllerTest {
+import okr.OkrController;
+
+public class OkrControllerTest {
 
 	@Test
 	public void controllerReturnsHelloText() {
-		HelloController controller = new HelloController();
+		OkrController controller = new OkrController();
 		assertEquals("Hello, world", controller.index());
 	}
 }
