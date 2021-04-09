@@ -1,6 +1,8 @@
-package okr;
+package okr.web;
 
 import org.junit.jupiter.api.Test;
+
+import okr.web.OkrController;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
