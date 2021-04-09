@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import okr.data.ObjectiveRepository;
-import okr.domain.Objective;
 
 @RestController
 public class ObjectivesController {
@@ -15,7 +14,7 @@ public class ObjectivesController {
 	private ObjectiveRepository repo;
 
 	@GetMapping("/objectives/{id}")
-	public Objective retrieveObjective(@PathVariable("id") int id) {
-		return repo.getById(id);
+	public ObjectivePayload retrieveObjective(@PathVariable("id") int id) {
+		return new ObjectivePayload(repo.getById(id));
 	}
 }

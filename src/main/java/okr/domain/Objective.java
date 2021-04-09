@@ -1,17 +1,17 @@
 package okr.domain;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
 @AllArgsConstructor
 public class Objective {
-	@JsonProperty("id")
 	private int id;
-	
-	@JsonProperty("description")
 	private String description;
-	
-	@JsonProperty("progress")
 	private float progress;
+	List<Objective> keyResults;
 }
