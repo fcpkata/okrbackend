@@ -2,8 +2,10 @@ package okr.web;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.NoArgsConstructor;
 import okr.domain.Objective;
 
+@NoArgsConstructor
 public class KeyResultPayload {
 	@JsonProperty("id")
 	private int id;

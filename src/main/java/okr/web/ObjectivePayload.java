@@ -5,8 +5,12 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import okr.domain.Objective;
 
+@Getter
+@NoArgsConstructor
 public class ObjectivePayload {
 	@JsonProperty("id")
 	private int id;
