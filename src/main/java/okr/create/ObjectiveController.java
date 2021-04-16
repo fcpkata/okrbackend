@@ -9,9 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/objectives")
 public class ObjectiveController {
 
+	private ObjectiveService objectiveService;
+
+	public ObjectiveController(ObjectiveService objectiveService) {
+		this.objectiveService = objectiveService;
+	}
+
 	@PostMapping("/create")
 	public Integer createObjective(@RequestBody String description) {
-		return 1;
+		
+		if(description != null) {
+			throw new RuntimeException("Bad Request");
+		}
+		
+		return objectiveService.createObjective(description).getId();
 	}
 
 }
