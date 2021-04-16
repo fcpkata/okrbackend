@@ -27,9 +27,11 @@ targetCompatibility = 11
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     compile 'org.springframework.boot:spring-boot-starter-web'
-    testCompile 'junit:junit:4.12'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    
-    //compile.exclude group: 'junit', module: 'junit' 
 
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    	exclude group: 'junit', module: 'junit'
+    }
+    testImplementation 'org.assertj:assertj-core:3.19.0'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    
 }
