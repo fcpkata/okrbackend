@@ -1,6 +1,8 @@
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
+        
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
@@ -27,6 +29,9 @@ targetCompatibility = 11
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     compile 'org.springframework.boot:spring-boot-starter-web'
+    
+    compile 'org.projectlombok:lombok:1.18.18'
+    annotationProcessor 'org.projectlombok:lombok:1.18.18'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
     	exclude group: 'junit', module: 'junit'
