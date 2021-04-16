@@ -1,8 +1,10 @@
-package okr;
+package okr.create;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+
+import okr.create.ObjectiveController;
 
 public class ObjectiveControllerTest {
 	
