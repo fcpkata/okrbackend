@@ -9,10 +9,10 @@ import okr.create.ObjectiveController;
 public class ObjectiveControllerTest {
 	
 	@Test
-	public void createObjective() {
+	public void createsObjectiveForADescription() {
 		
 		ObjectiveController objectiveController= new ObjectiveController();
-		Integer id = objectiveController.createObjective();
+		Integer id = objectiveController.createObjective("Objective for OKR 1");
 		assertThat(id).isEqualTo(1);
 	}
 
