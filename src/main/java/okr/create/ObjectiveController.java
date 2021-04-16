@@ -18,8 +18,8 @@ public class ObjectiveController {
 	@PostMapping("/create")
 	public Integer createObjective(@RequestBody String description) {
 		
-		if(description != null) {
-			throw new RuntimeException("Bad Request");
+		if(description == null || description == "") {
+			throw new RuntimeException("Missing Description");
 		}
 		
 		return objectiveService.createObjective(description).getId();
