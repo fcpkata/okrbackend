@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
 	@RequestMapping("/")
-	public String index() {
-		return "Hello, world";
+	public Objective retrive() {
+		return new Objective();
 	}
 }
