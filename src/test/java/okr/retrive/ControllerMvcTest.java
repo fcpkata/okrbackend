@@ -11,12 +11,12 @@ import org.springframework.test.web.servlet.MockMvc;
 @WebMvcTest
 public class ControllerMvcTest {
 	
-//	@Autowired
-//	MockMvc mockMvc;
-//
-//	@Test
-//	public void controllerReturnsHelloText() throws Exception {
-//		
-//		mockMvc.perform(get("/getObjective/10")).andExpect(status().isOk());
-//	}
+	@Autowired
+	MockMvc mockMvc;
+
+	@Test
+	public void controllerReturnsHelloText() throws Exception {
+		
+		mockMvc.perform(get("/getObjective/10")).andExpect(status().isOk());
+	}
 }
