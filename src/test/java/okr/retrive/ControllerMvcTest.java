@@ -21,6 +21,7 @@ public class ControllerMvcTest {
 	
 	@Autowired
 	MockMvc mockMvc;
+	
 	@MockBean
 	private ObjectiveRepository objectiveRepository;
 	
@@ -33,6 +34,7 @@ public class ControllerMvcTest {
 				.progress(10.00)
 				.description("Objective description")
 				.build());
+		
 		mockMvc.perform(get("/getObjective/10")
 				.header("content-type", MediaType.APPLICATION_JSON_VALUE))
 				.andExpect(status().isOk())

@@ -1,10 +1,9 @@
-package okr.create;
+package okr.repository;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import okr.model.Objective;
-import okr.repository.ObjectiveRepository;
 
 public class MockObjectiveRepository implements ObjectiveRepository {
 

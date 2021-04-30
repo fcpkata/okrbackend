@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import okr.model.Objective;
+import okr.repository.MockObjectiveRepository;
 import okr.repository.ObjectiveRepository;
 
 public class ObjectiveRepositoryTest {
