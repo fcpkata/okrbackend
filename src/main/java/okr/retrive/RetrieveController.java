@@ -14,16 +14,18 @@ import okr.repository.ObjectiveRepository;
 
 @RestController
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-public class Controller {
+public class RetrieveController {
 	
 	private ObjectiveRepository objectiveRepository;
 
-	public Controller(ObjectiveRepository objectiveRepository) {
+	public RetrieveController(ObjectiveRepository objectiveRepository) {
 		this.objectiveRepository = objectiveRepository;
 	}
 
-	@GetMapping("/getObjective/{id}")
+	@RequestMapping(path = "/objectives/{id}", produces = "application/json", consumes = "application/json")
 	public ResponseEntity<Objective> retrive(@PathVariable("id") Integer id) {
-		return new ResponseEntity<Objective>(objectiveRepository.getById(id), HttpStatus.OK);
+		
+		 return ResponseEntity.status(HttpStatus.OK)
+					  					.body(objectiveRepository.getById(id));
 	}
 }

@@ -15,7 +15,7 @@ import okr.model.Objective;
 import okr.repository.ObjectiveRepository;
 
 @ExtendWith(MockitoExtension.class)
-public class ControllerTest {
+public class RetrieveControllerTest {
 
 	@Mock
 	private ObjectiveRepository objectiveRepository;
@@ -28,7 +28,7 @@ public class ControllerTest {
 																	.progress(10.00)
 																	.description("Objective description")
 																	.build());
-		Controller controller = new Controller(objectiveRepository);
+		RetrieveController controller = new RetrieveController(objectiveRepository);
 		ResponseEntity<Objective> response = controller.retrive(10);
 		assertThat(response.getBody().getId()).isEqualTo(10);
 		assertThat(response.getBody().getDescription()).isEqualTo("Objective description");

@@ -17,7 +17,7 @@ import okr.model.Objective;
 import okr.repository.ObjectiveRepository;
 
 
-@WebMvcTest(controllers = Controller.class)
+@WebMvcTest(controllers = RetrieveController.class)
 public class ControllerMvcTest {
 	
 	@Autowired

@@ -3,8 +3,11 @@ package okr.repository;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import okr.model.Objective;
 
+@Component
 public class MockObjectiveRepository implements ObjectiveRepository {
 
 	private Map<Integer, Objective> objectiveMap;
@@ -24,6 +27,7 @@ public class MockObjectiveRepository implements ObjectiveRepository {
 
 	@Override
 	public okr.model.Objective getById(Integer id) {
-		return null;
+		
+		return objectiveMap.get(id);
 	}
 }
