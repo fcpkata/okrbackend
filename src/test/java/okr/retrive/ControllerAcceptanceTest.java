@@ -1,6 +1,7 @@
 package okr.retrive;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -42,6 +43,12 @@ public class ControllerAcceptanceTest {
 		assertThat(response.getBody().getDescription()).isEqualTo("Default objective");
 		assertThat(response.getBody().getProgress()).isEqualTo(0.0);
 		assertThat(response.getBody().getParentId()).isEqualTo(0);
+	}
+	
+	@Test
+	void shouldReturn404_forRetrieveObjective_whenIdIsNotAvailable() throws Exception {
+		ResponseEntity<Objective> response = restTemplate.exchange("http://localhost:8081/okrservice/objectives/5", HttpMethod.GET, prepareEntity(), Objective.class);
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
 	}
 
 

@@ -25,7 +25,12 @@ public class RetrieveController {
 	@RequestMapping(path = "/objectives/{id}", produces = "application/json", consumes = "application/json")
 	public ResponseEntity<Objective> retrive(@PathVariable("id") Integer id) {
 		
-		 return ResponseEntity.status(HttpStatus.OK)
-					  					.body(objectiveRepository.getById(id));
+		 Objective objective = objectiveRepository.getById(id);
+		 
+		 if(objective == null) {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Objective.builder().build());
+		 }
+		return ResponseEntity.status(HttpStatus.OK)
+					  					.body(objective);
 	}
 }
