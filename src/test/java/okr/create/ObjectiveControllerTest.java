@@ -30,7 +30,7 @@ public class ObjectiveControllerTest {
 	@Test
 	public void createsObjectiveForADescription() {
 		
-		when(mockObjectiveService.createObjective(anyString())).thenReturn(new Objective(1, "Objective for OKR 1"));
+		when(mockObjectiveService.createObjective(anyString())).thenReturn(new Objective(1, 0,"Objective for OKR 1",0.0));
 		
 		Integer id = objectiveController.createObjective("Objective for OKR 1");
 		assertThat(id).isEqualTo(1);

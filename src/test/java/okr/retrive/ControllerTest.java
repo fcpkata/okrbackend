@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import okr.model.Objective;
 import okr.repository.ObjectiveRepository;
 
 @ExtendWith(MockitoExtension.class)

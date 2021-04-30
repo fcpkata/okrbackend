@@ -28,7 +28,7 @@ class ObjectiveServiceTest {
 	@Test
 	void createsANewObjective() {
 		
-		when(objectiveRepository.saveObjective(anyString())).thenReturn(new Objective(1, "New Description"));
+		when(objectiveRepository.saveObjective(anyString())).thenReturn(new Objective(1, 0, "New Description", 0.0));
 		
 		Objective objective = objectiveService.createObjective("New Description");
 		assertThat(objective.getId()).isEqualTo(1);

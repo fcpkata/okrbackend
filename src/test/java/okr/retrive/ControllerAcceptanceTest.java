@@ -6,19 +6,19 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.client.RestTemplate;
 
 import okr.model.Objective;
 import okr.repository.ObjectiveRepository;
 
 
-@WebMvcTest(controllers = Controller.class)
-public class ControllerMvcTest {
+public class ControllerAcceptanceTest {
 	
 	@Autowired
 	MockMvc mockMvc;
@@ -43,4 +43,18 @@ public class ControllerMvcTest {
 				.andExpect(jsonPath("$.description").value("Objective description"))
 				.andExpect(jsonPath("$.progress").value("10.0"));
 	}
+	
+	private RestTemplate restTemplate;
+	
+	@BeforeEach
+	public void setup() {
+		restTemplate = new RestTemplate();
+	}
+	
+	
+	@Test
+	void shouldReturn200_forRetrieveObjective() throws Exception {
+//		restTemplate.getForObject("http://localhost:8081/okrservice/objectives/1", responseType);
+	}
+	
 }

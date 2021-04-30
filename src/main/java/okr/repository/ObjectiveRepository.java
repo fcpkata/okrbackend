@@ -6,6 +6,6 @@ public interface ObjectiveRepository {
 	
 	Objective saveObjective(String description);
 
-	okr.retrive.Objective getById(Integer id);
+	okr.model.Objective getById(Integer id);
 
 }
