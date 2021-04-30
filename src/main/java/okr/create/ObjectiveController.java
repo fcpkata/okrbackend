@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import okr.model.ObjectiveRequest;
+
 @RestController
 @RequestMapping("/objectives")
 public class ObjectiveController {
@@ -16,13 +18,13 @@ public class ObjectiveController {
 	}
 
 	@PostMapping("/create")
-	public Integer createObjective(@RequestBody String description) {
+	public Integer createObjective(@RequestBody ObjectiveRequest objectiveRequest) {
 		
-		if(description == null || description == "") {
+		if(objectiveRequest.getDescription() == null || objectiveRequest.getDescription() == "") {
 			throw new RuntimeException("Missing Description");
 		}
 		
-		return objectiveService.createObjective(description).getId();
+		return objectiveService.createObjective(objectiveRequest).getId();
 	}
 
 }

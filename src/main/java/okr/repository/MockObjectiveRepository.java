@@ -18,9 +18,9 @@ public class MockObjectiveRepository implements ObjectiveRepository {
 	}
 
 	@Override
-	public Objective saveObjective(String description) {
+	public Objective saveObjective(Objective objective) {
 		
-		objectiveMap.put(objectiveMap.size() + 1, new Objective(objectiveMap.size() + 1,0, description, 0.0));
+		objectiveMap.put(objectiveMap.size() + 1, objective);
 		
 		return objectiveMap.get(objectiveMap.size());
 	}

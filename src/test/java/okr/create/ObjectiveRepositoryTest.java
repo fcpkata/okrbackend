@@ -13,6 +13,7 @@ public class ObjectiveRepositoryTest {
 	
 	ObjectiveRepository objectiveRepository;
 	
+	
 	@BeforeEach
 	void setup() {
 		objectiveRepository = new MockObjectiveRepository();		
@@ -21,7 +22,7 @@ public class ObjectiveRepositoryTest {
 	@Test
 	public void shouldReturnObjective_byId() {
 		
-		Objective objective =  objectiveRepository.saveObjective("Expand business");
+		Objective objective =  objectiveRepository.saveObjective(new Objective(1, 0,"Objective for OKR 1",0.0));
 		
 		assertThat(objective).isNotNull();
 	}
@@ -29,14 +30,14 @@ public class ObjectiveRepositoryTest {
 	@Test 
 	public void shouldReturnExpectedObjective() {
 		
-		Objective objective =  objectiveRepository.saveObjective("Expand business");
-		Objective onboardObjective =  objectiveRepository.saveObjective("Onboard more customer");
+		Objective objective =  objectiveRepository.saveObjective(new Objective(1, 0,"Objective for OKR 1",0.0));
+		Objective onboardObjective =  objectiveRepository.saveObjective(new Objective(2, 0,"Objective for OKR 2",0.0));
 		
 		assertThat(objective.getId()).isEqualTo(1);
 		assertThat(onboardObjective.getId()).isEqualTo(2);
 		
-		assertThat(objective.getDescription()).isEqualTo("Expand business");
-		assertThat(onboardObjective.getDescription()).isEqualTo("Onboard more customer");
+		assertThat(objective.getDescription()).isEqualTo("Objective for OKR 1");
+		assertThat(onboardObjective.getDescription()).isEqualTo("Objective for OKR 2");
 		
 	}
 }

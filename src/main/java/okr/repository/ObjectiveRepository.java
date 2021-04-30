@@ -4,8 +4,8 @@ import okr.model.Objective;
 
 public interface ObjectiveRepository {
 	
-	Objective saveObjective(String description);
+	Objective saveObjective(Objective objective);
 
-	okr.model.Objective getById(Integer id);
+	Objective getById(Integer id);
 
 }
