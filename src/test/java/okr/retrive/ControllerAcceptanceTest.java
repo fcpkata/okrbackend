@@ -26,30 +26,6 @@ import okr.repository.ObjectiveRepository;
 
 public class ControllerAcceptanceTest {
 	
-	@Autowired
-	MockMvc mockMvc;
-	
-	@MockBean
-	private ObjectiveRepository objectiveRepository;
-	
-	@Test
-	public void shouldReturn200_forGetObjectiveEndpoint() throws Exception {
-		
-		when(objectiveRepository.getById(any())).thenReturn(Objective.builder()
-				.id(10)
-				.parentId(0)
-				.progress(10.00)
-				.description("Objective description")
-				.build());
-		
-		mockMvc.perform(get("/getObjective/10")
-				.header("content-type", MediaType.APPLICATION_JSON_VALUE))
-				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.id").value("10"))
-				.andExpect(jsonPath("$.description").value("Objective description"))
-				.andExpect(jsonPath("$.progress").value("10.0"));
-	}
-	
 	private RestTemplate restTemplate;
 	
 	@BeforeEach

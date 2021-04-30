@@ -28,8 +28,12 @@ public class RetrieveControllerTest {
 																	.progress(10.00)
 																	.description("Objective description")
 																	.build());
+		
+		
 		RetrieveController controller = new RetrieveController(objectiveRepository);
+		
 		ResponseEntity<Objective> response = controller.retrive(10);
+		
 		assertThat(response.getBody().getId()).isEqualTo(10);
 		assertThat(response.getBody().getDescription()).isEqualTo("Objective description");
 		assertThat(response.getBody().getParentId()).isEqualTo(0);
